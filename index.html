@@ -88,6 +88,7 @@ body::before{
   grid-template-columns:minmax(320px, 450px) minmax(360px,1fr);
   align-items:center;
   gap:54px;
+  transform:translateX(-34px);
 }
 .logo-zone{
   position:relative;
@@ -198,7 +199,7 @@ body::before{
   .page{width:min(100%, calc(100% - 28px));}
   .header{padding:16px 0 4px;}
   .hero{padding:0 0 18px;}
-  .wrap{grid-template-columns:1fr; gap:18px; text-align:center;}
+  .wrap{grid-template-columns:1fr; gap:18px; text-align:center; transform:none;}
   .logo-frame{width:min(70vw,320px);}
   .logo-zone::before{width:min(78vw,380px); height:min(78vw,380px);}
   .divider{margin:18px auto 20px;}
@@ -264,14 +265,14 @@ const translations = {
     footer: '© 2026 Octopus Africa Property'
   },
   zh: {
-    pageTitle: '章非地产',
+    pageTitle: '章非置业',
     kicker: '南非',
-    title: '章非地产',
+    title: '章非置业',
     titleClass: 'zh',
     slogan: '八方有路，步步有章。',
     sloganClass: 'zh',
     services: '南非房产 · 安居乐业服务 · 商业资源协调',
-    footer: '© 2026 章非地产'
+    footer: '© 2026 章非置业'
   }
 };
 function setLanguage(lang) {
