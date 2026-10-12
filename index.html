@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Octopus Africa Property — connecting people, places and possibilities in South Africa. Coming soon.">
+  <title>Octopus Africa Property | Coming Soon</title>
+  <style>
+    :root{color-scheme:light;--ink:#173f43;--muted:#607477;--teal:#146c73;--bg:#f7f9f5;--line:#dce6e2}
+    *{box-sizing:border-box}body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC",sans-serif;background:var(--bg);color:var(--ink)}
+    .wrap{min-height:100svh;display:flex;flex-direction:column;max-width:1200px;margin:auto;padding:30px clamp(24px,6vw,80px)}
+    header{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:12px;font-size:14px;font-weight:750;letter-spacing:.13em;line-height:1.35}
+    .mark{width:42px;height:42px;border:2px solid var(--teal);border-radius:50%;display:grid;place-items:center;font-size:24px;color:var(--teal);font-weight:700}
+    .lang{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:99px;padding:10px 15px;cursor:pointer;font-size:13px}
+    main{flex:1;display:flex;flex-direction:column;justify-content:center;max-width:850px;padding:100px 0}
+    .eyebrow{font-size:12px;letter-spacing:.2em;font-weight:700;color:var(--teal);margin-bottom:24px}
+    h1{font-size:clamp(45px,8vw,96px);font-weight:620;letter-spacing:-.065em;line-height:1.06;margin:0 0 28px}
+    h1 span{color:var(--teal)}
+    .sub{font-size:clamp(18px,2.2vw,23px);line-height:1.7;color:var(--muted);max-width:620px;margin:0 0 35px}
+    .rule{width:62px;height:3px;background:var(--teal);margin-bottom:34px}
+    .note{font-size:14px;line-height:1.8;color:var(--muted);max-width:650px}
+    footer{border-top:1px solid var(--line);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12px;color:var(--muted)}
+    [hidden]{display:none!important}
+    @media(max-width:600px){.wrap{padding:24px}main{padding:70px 0}h1{letter-spacing:-.045em}.brand{font-size:11px}}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand"><div class="mark" aria-hidden="true">O</div><div>OCTOPUS<br>AFRICA PROPERTY</div></div>
+    <button class="lang" type="button" id="langButton" aria-label="Switch language">中文 / EN</button>
+  </header>
+  <main>
+    <section id="english" lang="en">
+      <div class="eyebrow">SOUTH AFRICA · COMING SOON</div>
+      <h1>Find your place.<br><span>Feel at home.</span></h1>
+      <div class="rule"></div>
+      <p class="sub">Bridging language, people and property in South Africa.</p>
+      <p class="note">Octopus Africa Property is preparing a bilingual platform to help newcomers, residents and international visitors navigate property opportunities with greater clarity and confidence.</p>
+      <p class="note">Our website is under development. Please check back soon.</p>
+    </section>
+    <section id="chinese" lang="zh-CN" hidden>
+      <div class="eyebrow">南非 · 即将上线</div>
+      <h1>找到理想空间。<br><span>在南非安心生活。</span></h1>
+      <div class="rule"></div>
+      <p class="sub">跨越语言障碍，连接人与南非的每一处空间。</p>
+      <p class="note">Octopus Africa Property 正在筹建中英双语房产信息与服务平台，希望帮助新移民、当地居民和国际访客更清晰、更从容地了解南非的住房与商业地产机会。</p>
+      <p class="note">网站正在建设中，敬请期待。</p>
+    </section>
+  </main>
+  <footer><span>© <span id="year">2026</span> Octopus Africa Property</span><span>octopusproperty.co.za</span></footer>
+</div>
+<script>
+  const button=document.getElementById('langButton');
+  const english=document.getElementById('english');
+  const chinese=document.getElementById('chinese');
+  button.addEventListener('click',()=>{const showChinese=chinese.hidden;chinese.hidden=!showChinese;english.hidden=showChinese;document.documentElement.lang=showChinese?'zh-CN':'en';});
+  document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
