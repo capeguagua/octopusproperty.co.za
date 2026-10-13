@@ -6,8 +6,8 @@
 <meta name="theme-color" content="#0f5964">
 <meta name="description" content="Octopus Africa Property">
 <title>Octopus Africa Property</title>
-<link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=4">
-<link rel="shortcut icon" href="/favicon.ico?v=4">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=6">
+<link rel="shortcut icon" href="/favicon.ico?v=6">
 <style>
 :root{
   --bg:#0f5964;
@@ -29,7 +29,7 @@ body{
     radial-gradient(circle at 50% 45%, rgba(255,255,255,.05), transparent 34%),
     radial-gradient(circle at 85% 12%, rgba(230,166,58,.08), transparent 22%),
     linear-gradient(180deg, var(--bg) 0%, var(--bg-deep) 100%);
-  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+  font-family:"Avenir Next",Avenir,"Helvetica Neue",Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
   -webkit-font-smoothing:antialiased;
 }
 body::before{
@@ -44,7 +44,7 @@ body::before{
   width:min(1240px, calc(100% - 48px));
   margin:0 auto;
   display:grid;
-  grid-template-rows:auto 1fr;
+  grid-template-rows:auto minmax(0,1fr) auto;
 }
 .header{
   display:flex;
@@ -133,7 +133,8 @@ body::before{
   font-size:clamp(28px, 3.3vw, 52px);
 }
 .slogan.zh{
-  font-family:"Noto Serif SC","Songti SC","STSong",serif;
+  font-family:"LiSu","隶书","STLiti","FZLiShu-S01","Noto Serif CJK SC","Noto Serif SC","Songti SC",serif;
+  font-weight:400;
   font-size:clamp(26px, 3vw, 42px);
   letter-spacing:.06em;
   line-height:1.4;
@@ -165,7 +166,10 @@ body::before{
 .email::before{content:"✉"; color:var(--accent); font-size:15px;}
 .status{margin-top:22px;color:var(--accent);font-size:13px;letter-spacing:.14em;}
 .footer{
-  margin-top:13px;
+  margin-top:0;
+  padding:0 0 16px;
+  text-align:center;
+  align-self:end;
   color:rgba(247,245,239,.55);
   font-size:12px;
   letter-spacing:.08em;
@@ -213,7 +217,7 @@ body::before{
   .services{margin-top:9px}
   .email-row{margin-top:10px}
   .status{margin-top:9px}
-  .footer{margin-top:7px}
+  .footer{padding-bottom:9px}
 }
 @media (max-width:370px){.email{font-size:12px;padding:11px 13px}.page{width:calc(100% - 20px)}}
 @media (prefers-reduced-motion: reduce){
@@ -226,6 +230,35 @@ body::before{
 #title,#kicker{display:none!important}
 @media(max-width:900px){.site-name{font-size:clamp(12px,3.4vw,18px);letter-spacing:.055em;max-width:57%}.header{gap:10px}.language-control select{min-width:134px;font-size:12px;padding:10px 27px 10px 27px}.language-control::before{left:11px}}
 @media(max-width:380px){.site-name{max-width:50%;font-size:12px}.language-control select{min-width:125px}}
+
+/* Typography system: understated header, expressive literary slogan. */
+.site-name{font-family:"Avenir Next",Avenir,"Helvetica Neue",Arial,sans-serif;font-weight:600;letter-spacing:.115em;}
+html:lang(zh-CN) .site-name,html:lang(zh-TW) .site-name{
+  font-family:"Noto Sans CJK SC","PingFang SC","Microsoft YaHei",sans-serif;
+  font-weight:500;
+  letter-spacing:.15em;
+}
+.slogan:not(.zh){
+  font-family:"Iowan Old Style","Baskerville","Palatino Linotype","Book Antiqua",Georgia,serif;
+  font-weight:400;
+  letter-spacing:-.023em;
+  line-height:1.25;
+  text-wrap:balance;
+}
+.slogan.zh{
+  font-family:"LiSu","隶书","STLiti","FZLiShu-S01","Noto Serif CJK SC","Noto Serif SC","Songti SC",serif;
+  font-weight:400;
+  font-size:clamp(32px,3.7vw,52px);
+  line-height:1.4;
+  letter-spacing:.09em;
+  text-wrap:balance;
+}
+.services{font-weight:400;letter-spacing:.075em;}
+html:lang(zh-CN) .services,html:lang(zh-TW) .services{letter-spacing:.085em;}
+.status{font-weight:500;letter-spacing:.12em;}
+.footer{font-weight:400;letter-spacing:.08em;}
+@media(max-width:900px){.slogan.zh{font-size:clamp(27px,5.5vw,37px);letter-spacing:.045em;}}
+@media(max-width:380px){.slogan.zh{font-size:clamp(23px,5.2vw,30px);letter-spacing:.015em;}}
 </style>
 </head>
 <body>
@@ -266,10 +299,10 @@ body::before{
         <div class="email-row" data-fade="5">
           <a class="email" href="mailto:hello@octopusproperty.co.za">hello@octopusproperty.co.za</a>
         </div>
-        <div class="footer" id="footer" data-fade="5">© 2026 Octopus Africa Property</div>
       </div>
     </section>
   </main>
+  <footer class="footer" id="footer">© 2026 Octopus Africa Property</footer>
 </div>
 
 <script>
