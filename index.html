@@ -6,6 +6,8 @@
 <meta name="theme-color" content="#0f5964">
 <meta name="description" content="Octopus Africa Property">
 <title>Octopus Africa Property</title>
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=4">
+<link rel="shortcut icon" href="/favicon.ico?v=4">
 <style>
 :root{
   --bg:#0f5964;
@@ -46,8 +48,9 @@ body::before{
 }
 .header{
   display:flex;
-  justify-content:flex-end;
+  justify-content:space-between;
   align-items:center;
+  gap:14px;
   padding:22px 0 6px;
   position:relative;
   z-index:5;
@@ -217,11 +220,18 @@ body::before{
   *, *::before, *::after{animation:none !important; transition:none !important;}
   [data-fade]{opacity:1; transform:none;}
 }
+
+/* Company name sits in the upper-left, away from the central slogan. */
+.site-name{font-weight:650;font-size:clamp(16px,1.7vw,23px);letter-spacing:.13em;color:var(--text);line-height:1.3;max-width:65%;}
+#title,#kicker{display:none!important}
+@media(max-width:900px){.site-name{font-size:clamp(12px,3.4vw,18px);letter-spacing:.055em;max-width:57%}.header{gap:10px}.language-control select{min-width:134px;font-size:12px;padding:10px 27px 10px 27px}.language-control::before{left:11px}}
+@media(max-width:380px){.site-name{max-width:50%;font-size:12px}.language-control select{min-width:125px}}
 </style>
 </head>
 <body>
 <div class="page">
   <header class="header">
+    <div class="site-name" id="site-name">OCTOPUS AFRICA PROPERTY</div>
     <nav class="language-control" aria-label="Language">
       <select id="language" aria-label="Choose language" onchange="setLanguage(this.value)">
         <option value="en">English</option>
@@ -231,6 +241,9 @@ body::before{
         <option value="fr">Français</option>
         <option value="sl">Slovenščina</option>
         <option value="it">Italiano</option>
+        <option value="es">Español</option>
+        <option value="ja">日本語</option>
+        <option value="ko">한국어</option>
       </select>
     </nav>
   </header>
@@ -268,16 +281,16 @@ const translations = {
     status: 'Coming soon. Stay tuned.', footer: '© 2026 Octopus Africa Property'
   },
   'zh-CN': {
-    pageTitle: '章非置业', kicker: '南非',
-    title: '章非置业', slogan: '八方有路，步步有章。',
+    pageTitle: '八爪鱼置业', kicker: '南非',
+    title: '八爪鱼置业', slogan: '八方有路，步步有章。',
     services: '南非房产 · 安居乐业服务 · 商业资源协调',
-    status: '筹备中，敬请期待。', footer: '© 2026 章非置业'
+    status: '筹备中，敬请期待。', footer: '© 2026 八爪鱼置业'
   },
   'zh-TW': {
-    pageTitle: '章非置業', kicker: '南非',
-    title: '章非置業', slogan: '八方有路，步步有章。',
+    pageTitle: '八爪魚置業', kicker: '南非',
+    title: '八爪魚置業', slogan: '八方有路，步步有章。',
     services: '南非房產 · 安居樂業服務 · 商業資源協調',
-    status: '籌備中，敬請期待。', footer: '© 2026 章非置業'
+    status: '籌備中，敬請期待。', footer: '© 2026 八爪魚置業'
   },
   de: {
     pageTitle: 'Octopus Africa Property', kicker: 'Südafrika',
@@ -302,6 +315,24 @@ const translations = {
     title: 'OCTOPUS<br>AFRICA PROPERTY', slogan: 'Ogni passo apre nuove possibilità.',
     services: 'Immobili · Trasferimento · Soluzioni per le imprese',
     status: 'In preparazione. A presto.', footer: '© 2026 Octopus Africa Property'
+  },
+  es: {
+    pageTitle: 'Octopus Africa Property', kicker: 'Sudáfrica',
+    title: 'OCTOPUS<br>AFRICA PROPERTY', slogan: 'Cada paso abre nuevas posibilidades.',
+    services: 'Inmuebles · Traslados · Soluciones empresariales',
+    status: 'En preparación. Próximamente.', footer: '© 2026 Octopus Africa Property'
+  },
+  ja: {
+    pageTitle: 'Octopus Africa Property', kicker: '南アフリカ',
+    title: 'OCTOPUS<br>AFRICA PROPERTY', slogan: '一歩ごとに、可能性が広がる。',
+    services: '不動産 · 移住・生活支援 · ビジネスサポート',
+    status: '準備中です。公開までしばらくお待ちください。', footer: '© 2026 Octopus Africa Property'
+  },
+  ko: {
+    pageTitle: 'Octopus Africa Property', kicker: '남아프리카공화국',
+    title: 'OCTOPUS<br>AFRICA PROPERTY', slogan: '한 걸음마다 더 많은 가능성이 열립니다.',
+    services: '부동산 · 이주 및 정착 · 비즈니스 지원',
+    status: '준비 중입니다. 곧 찾아뵙겠습니다.', footer: '© 2026 Octopus Africa Property'
   }
 };
 function setLanguage(lang) {
@@ -309,6 +340,7 @@ function setLanguage(lang) {
   const t = translations[lang];
   document.documentElement.lang = lang;
   document.title = t.pageTitle;
+  document.getElementById('site-name').textContent = lang === 'zh-CN' ? '八爪鱼置业' : lang === 'zh-TW' ? '八爪魚置業' : 'OCTOPUS AFRICA PROPERTY';
   for (const key of ['kicker','title','slogan','services','status','footer']) {
     document.getElementById(key).innerHTML = t[key];
   }
