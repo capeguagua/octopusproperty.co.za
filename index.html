@@ -9,6 +9,15 @@
 <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=6">
 <link rel="shortcut icon" href="/favicon.ico?v=6">
 <style>
+/* Load the actual uploaded DaoLiTi file from the repository root. */
+@font-face {
+  font-family: "OAP DaoLi";
+  src: url("./AlimamaDaoLiTi-Regular.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 :root{
   --bg:#0f5964;
   --bg-deep:#0b4c55;
@@ -133,7 +142,7 @@ body::before{
   font-size:clamp(28px, 3.3vw, 52px);
 }
 .slogan.zh{
-  font-family:"LiSu","隶书","STLiti","FZLiShu-S01","Noto Serif CJK SC","Noto Serif SC","Songti SC",serif;
+  font-family:"OAP DaoLi","LiSu","隶书","STLiti","FZLiShu-S01","Noto Serif CJK SC","Noto Serif SC","Songti SC",serif;
   font-weight:400;
   font-size:clamp(26px, 3vw, 42px);
   letter-spacing:.06em;
@@ -246,7 +255,7 @@ html:lang(zh-CN) .site-name,html:lang(zh-TW) .site-name{
   text-wrap:balance;
 }
 .slogan.zh{
-  font-family:"LiSu","隶书","STLiti","FZLiShu-S01","Noto Serif CJK SC","Noto Serif SC","Songti SC",serif;
+  font-family:"OAP DaoLi","LiSu","隶书","STLiti","FZLiShu-S01","Noto Serif CJK SC","Noto Serif SC","Songti SC",serif;
   font-weight:400;
   font-size:clamp(32px,3.7vw,52px);
   line-height:1.4;
