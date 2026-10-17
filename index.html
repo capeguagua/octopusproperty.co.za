@@ -12,7 +12,7 @@
 /* Load the actual uploaded DaoLiTi file from the repository root. */
 @font-face {
   font-family: "OAP DaoLi";
-  src: url("./AlimamaDaoLiTi-Regular.otf") format("opentype");
+  src: url("./AlimamaDaoLiTi-Regular.otf?v=20261017") format("opentype");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -110,6 +110,8 @@ body::before{
 .logo-frame img{
   width:100%;height:100%;object-fit:contain;display:block;
   filter:drop-shadow(0 12px 28px rgba(0,0,0,.18));
+  -webkit-mask-image:radial-gradient(circle at center, #000 43%, rgba(0,0,0,.96) 56%, rgba(0,0,0,.65) 69%, transparent 84%);
+  mask-image:radial-gradient(circle at center, #000 43%, rgba(0,0,0,.96) 56%, rgba(0,0,0,.65) 69%, transparent 84%);
 }
 .content{
   max-width:620px;
@@ -306,7 +308,7 @@ html:lang(zh-CN) .services,html:lang(zh-TW) .services{letter-spacing:.085em;}
         <p class="services" id="services" data-fade="4">Property · Relocation · Business Solutions</p>
         <p class="status" id="status" data-fade="5">Coming soon. Stay tuned.</p>
         <div class="email-row" data-fade="5">
-          <a class="email" href="mailto:hello@octopusproperty.co.za">hello@octopusproperty.co.za</a>
+          <a class="email" href="mailto:hello@octopuspty.co.za">hello@octopuspty.co.za</a>
         </div>
       </div>
     </section>
